@@ -1,26 +1,32 @@
-html,
-body {
+.container {
+  width:100%;
+  max-width:600px;
+  margin:0 auto;
+}
+.chess-board{
+  border: 1px solid black;
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.grid_row{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
 }
-
-* {
-  box-sizing: border-box;
+.grid_column{
+  aspect-ratio: 1/1;
+  background-color: white;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.grid_row:nth-child(odd) .grid_column:nth-child(odd){
+  background-color:black;
+}
+.grid_row:nth-child(even) .grid_column:nth-child(even){
+  background-color:black;
+}
+.grid_row .grid_column:hover{
+  background-color: red;
+}
+.grid_row:nth-child(odd) .grid_column:nth-child(odd):hover{
+  background-color:red;
+}
+.grid_row:nth-child(even) .grid_column:nth-child(even):hover{
+  background-color:red;
 }
